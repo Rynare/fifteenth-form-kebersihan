@@ -71,8 +71,25 @@
   font-style: italic;
 }
 
+:root {
+  --bg-color-main: #f0ebf8;
+  --bg-color-board: #020024;
+  --color-main: white;
+  --color-disabled: rgb(146, 146, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color-main: #020024;
+    --bg-color-board: white;
+    --color-main: black;
+    --color-disabled: grey;
+  }
+}
+
 body {
-  background-color: #020024;
+  background-color: var(--bg-color-main);
+  color: var(--color-main);
 }
 
 #app {
@@ -82,12 +99,11 @@ body {
 #app header,
 #app form > .sub-form {
   padding: 2rem;
-  background-color: white;
+  background-color: var(--bg-color-board);
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border: 10px solid #cf7e27;
 }
 
 .divider {
@@ -101,9 +117,24 @@ body {
   flex-direction: column;
 }
 
+.sub-form .sub-label {
+  color: var(--color-disabled);
+}
+
+.sub-form #date-submit {
+  background-color: var(--bg-color-board);
+  color: var(--color-main);
+}
+
+.sub-form #date-submit::-webkit-calendar-picker-indicator {
+  background-color: var(--bg-color-board);
+  mix-blend-mode: darken;
+}
+
 .sub-form label {
   font-size: 12pt;
   line-height: 24px;
+  color: var(--color-main);
 }
 
 .sub-form input {
@@ -137,6 +168,7 @@ input-preview .ip-wrapper:last-child label {
   border-radius: 10px;
   width: fit-content;
   color: grey;
+  background-color: var(--bg-color-board);
 }
 
 input-preview .ip-wrapper:last-child label > svg {
