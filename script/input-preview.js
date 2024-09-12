@@ -12,7 +12,6 @@ const inputPreviewWrapper = `
 class InputPreview extends HTMLElement {
   constructor() {
     super();
-    this.iterator = 0;
   }
   connectedCallback() {
     this.render();
@@ -25,16 +24,10 @@ class InputPreview extends HTMLElement {
     this.appendChild(template);
     template
       .querySelector("input[hidden]")
-      .setAttribute(
-        "name",
-        `b64_${this.getAttribute("name")}[${this.iterator}]`
-      );
+      .setAttribute("name", `b64_${this.getAttribute("name")}[]`);
     template
       .querySelector("input[is=image-form]")
-      .setAttribute(
-        "name",
-        `file_${this.getAttribute("name")}[${this.iterator}]`
-      );
+      .setAttribute("name", `file_${this.getAttribute("name")}[]`);
     template
       .querySelector(".ip-wrapper input[is=image-form]")
       .addEventListener("change", (event) => {
@@ -54,7 +47,6 @@ class InputPreview extends HTMLElement {
               .setAttribute("required", true);
             input.setAttribute("required", true);
             input.hidden = true;
-            ipWrapper.iterator += 1;
             ipWrapper.render();
           };
           reader.readAsDataURL(file);
