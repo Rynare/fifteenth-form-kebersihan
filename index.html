@@ -1,245 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fifteenth Form</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body class="flex roboto-regular bg-[#f0ebf8]">
-    <div id="app" class="max-w-[640px] w-[640px] mx-auto">
-      <header>
-        <h1 class="text-[32px] mb-2">CHECK LIST FIFTEENTH LOMBOK</h1>
-        <h4>Laporkan sesuai poin poin berikut dengan bukti foto</h4>
-        <div class="divider my-3"></div>
-        <p class="text-red-600">* Indicates required question</p>
-      </header>
-      <form action="" enctype="multipart/form-data" class="mb-5">
-        <div class="sub-form">
-          <label for="">Tanggal</label>
-          <span class="sub-label my-3">Date</span>
-          <input type="date" name="tanggal_laporan" id="" />
-        </div>
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan body tong sampah depan dan kondisi tertutup.</label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload 1 supported file: image. Max 10 MB.</span
-          >
-          <input-preview name="kebersihan_body_tong_sampah"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan taman depan dan tanaman rapi teratur, tanpa ada 1 pot
-            pun yang kosong, tanpa ada tanaman yang gepeng tergencet
-            siapapun.</label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload up to 5 supported files: image. Max 10 MB per file.</span
-          >
-          <input-preview name="kebersihan_taman_depan"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan tempat taruh helm (tembok hitam I'm Lost)
-            <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload 1 file yang didukung: image. Maks 10 MB.</span
-          >
-          <input-preview name="kebersihan_tempat_helm"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fifteenth Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan track reel pintu geser perbatasan sebelum masuk ke bar
-            dan kebersihan SUBWOOFER <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 5 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_track_reel"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+<body class="flex roboto-regular">
+  <div id="app" class="max-w-[640px] w-[640px] mx-auto px-3">
+    <header>
+      <h1 class="text-[32px] mb-2">CHECK LIST FIFTEENTH LOMBOK</h1>
+      <h4>Laporkan sesuai poin poin berikut dengan bukti foto</h4>
+      <div class="divider my-3"></div>
+      <p class="text-red-600">* Indicates required question</p>
+    </header>
+    <form action="" enctype="multipart/form-data" class="mb-5">
+      <div class="sub-form">
+        <label for="date-submit">Tanggal</label>
+        <span class="sub-label my-3">Date</span>
+        <div class="flex items-center">
+          <div class="bg-orange-300 p-2 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-calendar4-week" viewBox="0 0 16 16">
+              <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+              <path
+                d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+            </svg>
+          </div>
+          <input type="date" name="tanggal_laporan" id="date-submit" class="py-2 pe-5 ps-2 focus-within:outline-none" />
         </div>
+      </div>
+      <div class="sub-form">
+        <label for="">Kebersihan body tong sampah depan dan kondisi tertutup.</label>
+        <span class="sub-label my-3 text-gray-500">Upload 1 supported file: image. Max 10 MB.</span>
+        <input-preview name="kebersihan_body_tong_sampah"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
+      <div class="sub-form">
+        <label for="">Kebersihan taman depan dan tanaman rapi teratur, tanpa ada 1 pot
+          pun yang kosong, tanpa ada tanaman yang gepeng tergencet
+          siapapun.</label>
+        <span class="sub-label my-3 text-gray-500">Upload up to 5 supported files: image. Max 10 MB per file.</span>
+        <input-preview name="kebersihan_taman_depan"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kondisi tanaman di sekat bangku area outdoor, tanaman di rak tembok
-            sharing table, tanaman di 2 sharing table, meja yang menghadap
-            lukisan, dan setiap meja lainnya, serta kelurusan lukisan di
-            dinding. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kondisi_tanaman_outdoor"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan tempat taruh helm (tembok hitam I'm Lost)
+          <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload 1 file yang didukung: image. Maks 10 MB.</span>
+        <input-preview name="kebersihan_tempat_helm"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan GANG menuju mushola, tidak boleh ada barang berserakan.
-            kebersihan washtafel sebelah mushola, dan taman di depan bar 100.
-            Pintu menuju mushola selalu tertutup..
-            <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 5 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_gang"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan track reel pintu geser perbatasan sebelum masuk ke bar
+          dan kebersihan SUBWOOFER <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 5 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_track_reel"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan WC, tanaman di wc dan kerapian wc.
-            <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 5 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_wc"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kondisi tanaman di sekat bangku area outdoor, tanaman di rak tembok
+          sharing table, tanaman di 2 sharing table, meja yang menghadap
+          lukisan, dan setiap meja lainnya, serta kelurusan lukisan di
+          dinding. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kondisi_tanaman_outdoor"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Jebakan tikus setelah pintu bar 100.
-            <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload 1 file yang didukung: image. Maks 10 MB.</span
-          >
-          <input-preview name="kebersihan_jebakan_tikus"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan GANG menuju mushola, tidak boleh ada barang berserakan.
+          kebersihan washtafel sebelah mushola, dan taman di depan bar 100.
+          Pintu menuju mushola selalu tertutup..
+          <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 5 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_gang"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan dining room <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload 1 file yang didukung: image. Maks 10 MB.</span
-          >
-          <input-preview name="kebersihan_dining_room"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan WC, tanaman di wc dan kerapian wc.
+          <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 5 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_wc"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan ruang vip sofa hijau. Karpet dan sofa. Meja kecil. Meja
-            buku buku. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload 1 file yang didukung: image. Maks 10 MB.</span
-          >
-          <input-preview name="kebersihan_ruang_vip"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Jebakan tikus setelah pintu bar 100.
+          <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload 1 file yang didukung: image. Maks 10 MB.</span>
+        <input-preview name="kebersihan_jebakan_tikus"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan indoor room, karpet dan sofa, bantalan sofa diatur lurus
-            rapi. Piano dan rak sebelah piano, tanaman di sekatan bangku indoor,
-            tanaman di depan jendela sekat baliknya vip sofa hijau. Kelurusan
-            lukisan semua. Kisi kisi hijau dibalik dining room bebas debu.
-            Tanaman monstera dll. Kepala kap lampu harus lurus semua, kalau
-            tidak lurus cari tukang untuk luruskan. Sudut sudut pojok sofa,
-            dekat piano dan tanaman, dekat rak buku.
-            <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_indoor_room"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan dining room <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload 1 file yang didukung: image. Maks 10 MB.</span>
+        <input-preview name="kebersihan_dining_room"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kebersihan bar, pajangan kasir rapi, showcase rapi. Pintu gang
-            selalu tertutup. Laci di bawah wastafel dan ice bin kering dan
-            bersih. Kolong bawah mesin kopi bersih dan rapi, bawah kasir, celah
-            antara kulkas, celah freezer. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_bar"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan ruang vip sofa hijau. Karpet dan sofa. Meja kecil. Meja
+          buku buku. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload 1 file yang didukung: image. Maks 10 MB.</span>
+        <input-preview name="kebersihan_ruang_vip"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kehiginisan alat makan, piring di bar selalu kondisi tertutup,
-            piring di dapur selalu tertutup, kolong balik meja kompor dapur,
-            kolong bawah meja potong dapur. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kebersihan_alat_makan"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan indoor room, karpet dan sofa, bantalan sofa diatur lurus
+          rapi. Piano dan rak sebelah piano, tanaman di sekatan bangku indoor,
+          tanaman di depan jendela sekat baliknya vip sofa hijau. Kelurusan
+          lukisan semua. Kisi kisi hijau dibalik dining room bebas debu.
+          Tanaman monstera dll. Kepala kap lampu harus lurus semua, kalau
+          tidak lurus cari tukang untuk luruskan. Sudut sudut pojok sofa,
+          dekat piano dan tanaman, dekat rak buku.
+          <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_indoor_room"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Tidak boleh ada tumpukan paket menggunung, harus didistribusikan
-            dan diantar ke yang bersangkutan. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="tumpukan_paket"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
+      <div class="sub-form">
+        <label for="">Kebersihan bar, pajangan kasir rapi, showcase rapi. Pintu gang
+          selalu tertutup. Laci di bawah wastafel dan ice bin kering dan
+          bersih. Kolong bawah mesin kopi bersih dan rapi, bawah kasir, celah
+          antara kulkas, celah freezer. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_bar"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
 
-        <div class="sub-form">
-          <label for=""
-            >Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali
-            di kratnya. <i style="color: red">*</i></label
-          >
-          <span class="sub-label my-3 text-gray-500"
-            >Upload maksimum 10 file yang didukung: image. Maks 10 MB per
-            file.</span
-          >
-          <input-preview name="kerapian_botol_bir"> </input-preview>
-          <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
-        </div>
-        <div class="footer-form flex justify-end mx-2">
-          <button type="reset" class="text-red-500 me-5">Reset</button>
-          <button
-            type="submit"
-            class="bg-purple-700 px-5 py-2 text-white rounded-md"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-    <script type="module" src="./script/image-form.js"></script>
-    <script type="module" src="./script/input-preview.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {},
-        },
-      };
-    </script>
-  </body>
+      <div class="sub-form">
+        <label for="">Kehiginisan alat makan, piring di bar selalu kondisi tertutup,
+          piring di dapur selalu tertutup, kolong balik meja kompor dapur,
+          kolong bawah meja potong dapur. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kebersihan_alat_makan"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
+
+      <div class="sub-form">
+        <label for="">Tidak boleh ada tumpukan paket menggunung, harus didistribusikan
+          dan diantar ke yang bersangkutan. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="tumpukan_paket"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
+
+      <div class="sub-form">
+        <label for="">Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali
+          di kratnya. <i style="color: red">*</i></label>
+        <span class="sub-label my-3 text-gray-500">Upload maksimum 10 file yang didukung: image. Maks 10 MB per
+          file.</span>
+        <input-preview name="kerapian_botol_bir"> </input-preview>
+        <span class="text-red-500 mt-3">Klik gambar untuk menghapus!</span>
+      </div>
+      <div class="footer-form flex justify-end mx-2">
+        <button type="reset" class="text-red-500 me-5">Reset</button>
+        <button type="submit" class="bg-[#2e44ff] px-5 py-2 text-white rounded-md">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <script type="module" src="./script/image-form.js"></script>
+  <script type="module" src="./script/input-preview.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {},
+      },
+    };
+  </script>
+</body>
+
 </html>

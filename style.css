@@ -71,17 +71,23 @@
   font-style: italic;
 }
 
+body {
+  background-color: #020024;
+}
+
 #app {
   font-size: 12px;
 }
 
 #app header,
 #app form > .sub-form {
-  padding: 1rem;
+  padding: 2rem;
   background-color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .divider {
@@ -102,15 +108,7 @@
 
 .sub-form input {
   width: fit-content;
-}
-
-.sub-form button {
-  padding: 0 15px 0 11px;
-  color: #1a73e8;
-  border-color: #1a73e8;
-  border-width: 1px;
-  border-radius: 8px;
-  padding: 4px 10px;
+  min-width: 44px;
 }
 
 input-preview {
@@ -126,4 +124,29 @@ input-preview img {
 
 input-preview .ip-wrapper:last-child {
   min-width: 101%;
+}
+
+input-preview .ip-wrapper:not(:last-child) label {
+  display: none;
+}
+
+input-preview .ip-wrapper:last-child label {
+  font-size: 12px;
+  padding: 5px 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border-radius: 10px;
+  width: fit-content;
+  color: grey;
+}
+
+input-preview .ip-wrapper:last-child label > svg {
+  width: 16px;
+}
+
+input-preview .ip-wrapper:last-child label > :first-child {
+  aspect-ratio: 1/1;
+}
+
+input-preview .ip-wrapper:last-child label > :last-child {
+  margin-left: 2px;
 }
