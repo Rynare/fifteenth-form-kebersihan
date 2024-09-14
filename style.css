@@ -121,9 +121,9 @@ ul.splide__pagination,
     justify-content: center;
 }
 
-.preview-wrapper img:first-child {
+/* .preview-wrapper img:first-child {
     margin-bottom: auto;
-}
+} */
 
 .preview-wrapper img {
     height: auto;
@@ -133,14 +133,15 @@ ul.splide__pagination,
     max-height: 35vh;
     max-width: 70vw;
     border: 2px solid var(--text-color-main);
+    margin: auto;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .preview-wrapper img:first-child {
         margin-right: auto;
         margin-bottom: unset;
     }
-}
+} */
 
 .image-preview-container .preview-wrapper {
     margin-top: 20px;
