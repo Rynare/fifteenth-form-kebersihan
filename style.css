@@ -161,6 +161,7 @@ ul.splide__pagination,
 .take-pict {
     background-color: var(--text-color-main);
     color: var(--bg-color-main);
+    border: 3px solid var(--bg-color-secondary);
 }
 
 .image-preview-container .preview-wrapper::-webkit-scrollbar {
