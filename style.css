@@ -118,10 +118,11 @@ ul.splide__pagination,
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .preview-wrapper img {
-    height: 35vh;
+    min-height: 35vh;
     width: auto;
 }
 
@@ -137,6 +138,8 @@ ul.splide__pagination,
     gap: 10px;
     border-radius: 8px;
     padding: 10px;
+    align-items: stretch;
+    height: 100%;
 }
 
 .input-wrapper {
