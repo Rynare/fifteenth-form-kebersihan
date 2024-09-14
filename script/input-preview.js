@@ -88,7 +88,7 @@ class InputPreview extends HTMLElement {
             input.removeAttribute("id");
             input.hidden = true;
 
-            ipWrapper.renderInputWrapper();
+            // ipWrapper.renderInputWrapper();
           };
           reader.readAsDataURL(file);
         }
