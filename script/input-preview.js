@@ -82,13 +82,12 @@ class InputPreview extends HTMLElement {
               if (confirm("Ingin menghapus foto ini?")) {
                 img.remove();
                 template.remove();
+                ipWrapper.renderInputWrapper();
               }
             });
 
             input.removeAttribute("id");
             input.hidden = true;
-
-            // ipWrapper.renderInputWrapper();
           };
           reader.readAsDataURL(file);
         }

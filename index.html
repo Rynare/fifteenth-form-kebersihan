@@ -9,19 +9,19 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script/image-form.js"></script>
     <script src="./script/input-preview.js"></script>
-    <script src="
+    <!-- <script src="
     https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
     "></script>
     <link href="
     https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-    " rel="stylesheet">
+    " rel="stylesheet"> -->
 
 </head>
 
 <body class="min-h-screen">
     <header class="sticky top-0 z-10 w-full px-5">
         <nav class="flex items-center justify-between">
-            <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Cafe</a>
+            <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Cafe - Group</a>
             <div class="flex gap-x-2">
                 <p>Lokasi:&nbsp;<span class="cafe-location">Lombok</span></p>
             </div>
@@ -48,7 +48,7 @@
                                         <p>Kebersihan body tong sampah depan dan kondisi tertutup.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500 ms-auto">Next</button>
+                                                class="hidden text-blue-500 ms-auto">Next</button>
                                         </div>
                                     </div>
 
@@ -56,7 +56,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_body_tong_sampah"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -68,9 +68,9 @@
                                             siapapun.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -78,7 +78,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_taman_depan"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -88,9 +88,9 @@
                                         <p>Kebersihan tempat taruh helm (tembok hitam I'm Lost).</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -98,7 +98,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_tempat_helm"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -109,9 +109,9 @@
                                             dan kebersihan SUBWOOFER.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -119,7 +119,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_track_reel"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -132,9 +132,9 @@
                                             dinding.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -142,7 +142,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kondisi_tanaman_outdoor"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -154,17 +154,16 @@
                                             Pintu menuju mushola selalu tertutup.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
                                     <p class="my-3 text-xs text-center text-gray-200 sub-label">
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
-                                    <input-preview name="kebersihan_gang"
-                                        class="flex flex-col justify-between h-screen grow">
+                                    <input-preview name="kebersihan_gang" class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -174,17 +173,16 @@
                                         <p>Kebersihan WC, tanaman di wc dan kerapian wc.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
                                     <p class="my-3 text-xs text-center text-gray-200 sub-label">
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
-                                    <input-preview name="kebersihan_wc"
-                                        class="flex flex-col justify-between h-screen grow">
+                                    <input-preview name="kebersihan_wc" class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -194,9 +192,9 @@
                                         <p>Jebakan tikus setelah pintu bar 100.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -204,7 +202,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_jebakan_tikus"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -214,9 +212,9 @@
                                         <p>Kebersihan dining room.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -224,7 +222,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_dining_room"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -235,9 +233,9 @@
                                             buku buku.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -245,7 +243,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_ruang_vip"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -261,9 +259,9 @@
                                             dekat piano dan tanaman, dekat rak buku.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -271,7 +269,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_indoor_room"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -284,17 +282,16 @@
                                             antara kulkas, celah freezer.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
                                     <p class="my-3 text-xs text-center text-gray-200 sub-label">
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
-                                    <input-preview name="kebersihan_bar"
-                                        class="flex flex-col justify-between h-screen grow">
+                                    <input-preview name="kebersihan_bar" class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -306,9 +303,9 @@
                                             kolong bawah meja potong dapur.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
@@ -316,7 +313,7 @@
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
                                     <input-preview name="kebersihan_alat_makan"
-                                        class="flex flex-col justify-between h-screen grow">
+                                        class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -327,17 +324,16 @@
                                             dan diantar ke yang bersangkutan.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
                                     <p class="my-3 text-xs text-center text-gray-200 sub-label">
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
-                                    <input-preview name="tumpukan_paket"
-                                        class="flex flex-col justify-between h-screen grow">
+                                    <input-preview name="tumpukan_paket" class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -348,17 +344,16 @@
                                             di kratnya.</p>
                                         <div class="flex justify-between mt-4">
                                             <button type="button" onclick="prevTask()"
-                                                class="text-blue-500">Prev</button>
+                                                class="hidden text-blue-500">Prev</button>
                                             <button type="button" onclick="nextTask()"
-                                                class="text-blue-500">Next</button>
+                                                class="hidden text-blue-500">Next</button>
                                         </div>
                                     </div>
 
                                     <p class="my-3 text-xs text-center text-gray-200 sub-label">
                                         Upload 1 supported file: image. Max 10 MB.
                                     </p>
-                                    <input-preview name="kerapian_botol_bir"
-                                        class="flex flex-col justify-between h-screen grow">
+                                    <input-preview name="kerapian_botol_bir" class="flex flex-col justify-between grow">
                                     </input-preview>
                                 </div>
                             </li>
@@ -368,10 +363,10 @@
             </form>
         </section>
     </main>
-    <script>
+    <!-- <script>
         var splide = new Splide('.splide');
         splide.mount();
-    </script>
+    </script> -->
 
     <script src="./script/main.js"></script>
 </body>
