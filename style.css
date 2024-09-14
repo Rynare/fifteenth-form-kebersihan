@@ -112,6 +112,7 @@ ul.splide__pagination,
 .text-task {
     background-color: var(--bg-color-main);
     color: var(--text-color-main);
+    filter: opacity(0.5);
 }
 
 
@@ -134,7 +135,7 @@ ul.splide__pagination,
     object-fit: contain;
     max-height: 35vh;
     max-width: 70vw;
-    border: 2px solid var(--text-color-main);
+    /* border: 2px solid var(--text-color-main); */
     margin: auto;
 }
 
