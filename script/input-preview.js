@@ -32,7 +32,7 @@ class InputPreview extends HTMLElement {
   preparingTemplate() {
     this.previewContainer.innerHTML = `
       <p class="text-red-500 text-xs text-center w-full">Klik gambar untuk menghapus!</p>
-      <div class="preview-wrapper flex flex-col md:flex-row grow gap-2 items-stretch h-full overflow-auto"> </div>
+      <div class="preview-wrapper flex flex-col-reverse md:flex-row-reverse grow gap-2 items-stretch h-full overflow-auto"> </div>
     `;
     this.strHtmlTemplate = this.strHtmlTemplate.replace(
       "&&input-b64-name&&",
@@ -56,6 +56,9 @@ class InputPreview extends HTMLElement {
     const template = document.createElement("div");
     const previewContainer = this.previewContainer;
 
+    previewContainer.querySelector(".preview-wrapper img:last-child")?.scrollIntoView({
+      behavior: "smooth",
+    })
     template.classList.add("input-wrapper");
     template.innerHTML = this.strHtmlTemplate;
     this.appendChild(template);

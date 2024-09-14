@@ -121,6 +121,10 @@ ul.splide__pagination,
     justify-content: center;
 }
 
+.preview-wrapper img:first-child {
+    margin-right: auto;
+}
+
 .preview-wrapper img {
     height: auto;
     width: auto;
