@@ -122,24 +122,22 @@ ul.splide__pagination,
 }
 
 .preview-wrapper img {
-    min-height: 35vh;
+    height: auto;
     width: auto;
+    object-position: center;
+    object-fit: contain;
+    max-height: 35vh;
+    max-width: 70vw;
+    border: 2px solid var(--text-color-main);
 }
 
 .image-preview-container .preview-wrapper {
     margin-top: 20px;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
     padding-bottom: 5px;
     margin-bottom: 20px;
     background: var(--bg-color-main);
-    flex-grow: 1;
-    gap: 10px;
     border-radius: 8px;
     padding: 10px;
-    align-items: stretch;
-    height: 100%;
 }
 
 .input-wrapper {

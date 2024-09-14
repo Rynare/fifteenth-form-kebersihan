@@ -32,7 +32,7 @@ class InputPreview extends HTMLElement {
   preparingTemplate() {
     this.previewContainer.innerHTML = `
       <p class="text-red-500 text-xs text-center w-full">Klik gambar untuk menghapus!</p>
-      <div class="preview-wrapper"> </div>
+      <div class="preview-wrapper flex flex-col md:flex-row grow gap-2 items-stretch h-full overflow-auto"> </div>
     `;
     this.strHtmlTemplate = this.strHtmlTemplate.replace(
       "&&input-b64-name&&",
