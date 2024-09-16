@@ -9,365 +9,106 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script/image-form.js"></script>
     <script src="./script/input-preview.js"></script>
-    <!-- <script src="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-    "></script>
-    <link href="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-    " rel="stylesheet"> -->
-
+    <script src="./script/sub-form.js"></script>
 </head>
 
-<body class="min-h-screen">
-    <header class="sticky top-0 z-10 w-full px-5">
-        <nav class="flex items-center justify-between">
-            <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Cafe - Group</a>
-            <div class="flex gap-x-2">
-                <p>Lokasi:&nbsp;<span class="cafe-location">Lombok</span></p>
+<body class="max-w-sm max-h-screen min-h-screen mx-auto">
+    <header class="sticky top-0 z-10 w-full">
+        <nav class="flex items-stretch justify-between px-5 py-2">
+            <span class="flex items-center gap-1 px-2 py-2 text-center text-white bg-black rounded-lg">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    class="mb-[1.5px]">
+                    <path
+                        d="M2.5 0.3125C2.5 0.22962 2.46708 0.150134 2.40847 0.0915291C2.34987 0.032924 2.27038 0 2.1875 0C2.10462 0 2.02513 0.032924 1.96653 0.0915291C1.90792 0.150134 1.875 0.22962 1.875 0.3125V0.625H1.25C0.918479 0.625 0.600537 0.756696 0.366117 0.991117C0.131696 1.22554 0 1.54348 0 1.875L0 2.5H10V1.875C10 1.54348 9.8683 1.22554 9.63388 0.991117C9.39946 0.756696 9.08152 0.625 8.75 0.625H8.125V0.3125C8.125 0.22962 8.09208 0.150134 8.03347 0.0915291C7.97487 0.032924 7.89538 0 7.8125 0C7.72962 0 7.65013 0.032924 7.59153 0.0915291C7.53292 0.150134 7.5 0.22962 7.5 0.3125V0.625H2.5V0.3125ZM10 8.75V3.125H0V8.75C0 9.08152 0.131696 9.39946 0.366117 9.63388C0.600537 9.8683 0.918479 10 1.25 10H8.75C9.08152 10 9.39946 9.8683 9.63388 9.63388C9.8683 9.39946 10 9.08152 10 8.75ZM7.8125 4.375H8.4375C8.52038 4.375 8.59987 4.40792 8.65847 4.46653C8.71708 4.52513 8.75 4.60462 8.75 4.6875V5.3125C8.75 5.39538 8.71708 5.47487 8.65847 5.53347C8.59987 5.59208 8.52038 5.625 8.4375 5.625H7.8125C7.72962 5.625 7.65013 5.59208 7.59153 5.53347C7.53292 5.47487 7.5 5.39538 7.5 5.3125V4.6875C7.5 4.60462 7.53292 4.52513 7.59153 4.46653C7.65013 4.40792 7.72962 4.375 7.8125 4.375Z"
+                        fill="currentColor" />
+                </svg>
+                <span class="current-date"></span>
+            </span>
+            <div class="flex items-center px-3 text-black bg-white rounded-lg gap-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z" />
+                    <path fill-rule="evenodd"
+                        d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                </svg>
+                <p class="font-extrabold">Cafe <span class="cafe-location">Lombok</span></p>
             </div>
         </nav>
+        <div class="relative hero-wrapper">
+            <div class="hero-img rounded-t-2xl"></div>
+            <div
+                class="absolute top-0 bottom-0 left-0 right-0 flex flex-col mt-auto backdrop-brightness-75 rounded-t-2xl">
+                <div class="flex flex-col items-center m-auto">
+                    <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Group</a>
+                    <a href="#" class="font-bold fifteenth-caution">Cafe by Mark Design</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main id="root" class="mt-3">
-        <div class="hero-wrapper">
-            <img src="https://hosnews.id/wp-content/uploads/2024/02/fifteenth-cafe-di-surabaya.jpeg?v=1706935313" alt=""
-                class="h-[200px] w-full object-cover object-center rounded-md">
-            <p class="mt-3 text-center"><span class="current-date"></span></p>
-        </div>
-
-        <section class="p-5 form-wrapper rounded-t-xl">
-            <form action="" enctype="multipart/form-data" class="h-full">
+    <main id="root" class="sticky min-h-full z-40 top-[47px] mt-[-30px] rounded-t-2xl">
+        <section class="relative min-h-full pb-5 form-wrapper rounded-t-2xl">
+            <div class="sticky top-0 z-10 flex justify-between px-3 py-5 section-header">
+                <p class="px-3 py-1 rounded-md email">fahimdavid04@gmail.com</p>
+                <div class="flex items-center gap-2 px-3 py-1 rounded-md view-option">
+                    <svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.645142 1.15384C0.645142 0.970229 0.738603 0.794138 0.904966 0.664305C1.07133 0.534472 1.29697 0.461533 1.53224 0.461533L5.96772 0.461533C6.20299 0.461533 6.42863 0.534472 6.59499 0.664305C6.76136 0.794138 6.85482 0.970229 6.85482 1.15384V10.8461C6.85482 11.0298 6.76136 11.2059 6.59499 11.3357C6.42863 11.4655 6.20299 11.5385 5.96772 11.5385H1.53224C1.29697 11.5385 1.07133 11.4655 0.904966 11.3357C0.738603 11.2059 0.645142 11.0298 0.645142 10.8461V1.15384ZM8.62901 1.15384C8.62901 0.970229 8.72247 0.794138 8.88884 0.664305C9.0552 0.534472 9.28084 0.461533 9.51611 0.461533L13.9516 0.461533C14.1869 0.461533 14.4125 0.534472 14.5789 0.664305C14.7452 0.794138 14.8387 0.970229 14.8387 1.15384V4.61538C14.8387 4.79899 14.7452 4.97508 14.5789 5.10491C14.4125 5.23475 14.1869 5.30769 13.9516 5.30769H9.51611C9.28084 5.30769 9.0552 5.23475 8.88884 5.10491C8.72247 4.97508 8.62901 4.79899 8.62901 4.61538V1.15384ZM8.62901 7.38461C8.62901 7.201 8.72247 7.02491 8.88884 6.89507C9.0552 6.76524 9.28084 6.6923 9.51611 6.6923H13.9516C14.1869 6.6923 14.4125 6.76524 14.5789 6.89507C14.7452 7.02491 14.8387 7.201 14.8387 7.38461V10.8461C14.8387 11.0298 14.7452 11.2059 14.5789 11.3357C14.4125 11.4655 14.1869 11.5385 13.9516 11.5385H9.51611C9.28084 11.5385 9.0552 11.4655 8.88884 11.3357C8.72247 11.2059 8.62901 11.0298 8.62901 10.8461V7.38461Z"
+                            fill="currentColor" />
+                    </svg>
+                    Tampilan
+                </div>
+            </div>
+            <form action="" enctype=" multipart/form-data" class="flex flex-col h-full mx-3 mt-4 gap-y-4">
                 <input type="date" name="tanggal_laporan" id="date-submit" class="py-2 pe-5 ps-2 focus:outline-none"
                     hidden />
-                <section class="h-full splide" aria-label="Form kebersihan">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan body tong sampah depan dan kondisi tertutup.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500 ms-auto">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_body_tong_sampah"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan taman depan dan tanaman rapi teratur, tanpa ada 1 pot
-                                            pun yang kosong, tanpa ada tanaman yang gepeng tergencet
-                                            siapapun.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_taman_depan"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan tempat taruh helm (tembok hitam I'm Lost).</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_tempat_helm"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan track reel pintu geser perbatasan sebelum masuk ke bar
-                                            dan kebersihan SUBWOOFER.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_track_reel"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kondisi tanaman di sekat bangku area outdoor, tanaman di rak tembok
-                                            sharing table, tanaman di 2 sharing table, meja yang menghadap
-                                            lukisan, dan setiap meja lainnya, serta kelurusan lukisan di
-                                            dinding.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kondisi_tanaman_outdoor"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan GANG menuju mushola, tidak boleh ada barang berserakan.
-                                            kebersihan washtafel sebelah mushola, dan taman di depan bar 100.
-                                            Pintu menuju mushola selalu tertutup.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_gang" class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan WC, tanaman di wc dan kerapian wc.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_wc" class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Jebakan tikus setelah pintu bar 100.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_jebakan_tikus"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan dining room.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_dining_room"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan ruang vip sofa hijau. Karpet dan sofa. Meja kecil. Meja
-                                            buku buku.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_ruang_vip"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan indoor room, karpet dan sofa, bantalan sofa diatur lurus
-                                            rapi. Piano dan rak sebelah piano, tanaman di sekatan bangku indoor,
-                                            tanaman di depan jendela sekat baliknya vip sofa hijau. Kelurusan
-                                            lukisan semua. Kisi kisi hijau dibalik dining room bebas debu.
-                                            Tanaman monstera dll. Kepala kap lampu harus lurus semua, kalau
-                                            tidak lurus cari tukang untuk luruskan. Sudut sudut pojok sofa,
-                                            dekat piano dan tanaman, dekat rak buku.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_indoor_room"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kebersihan bar, pajangan kasir rapi, showcase rapi. Pintu gang
-                                            selalu tertutup. Laci di bawah wastafel dan ice bin kering dan
-                                            bersih. Kolong bawah mesin kopi bersih dan rapi, bawah kasir, celah
-                                            antara kulkas, celah freezer.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_bar" class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kehiginisan alat makan, piring di bar selalu kondisi tertutup,
-                                            piring di dapur selalu tertutup, kolong balik meja kompor dapur,
-                                            kolong bawah meja potong dapur.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kebersihan_alat_makan"
-                                        class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Tidak boleh ada tumpukan paket menggunung, harus didistribusikan
-                                            dan diantar ke yang bersangkutan.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="tumpukan_paket" class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-col h-full sub-form">
-                                    <div class="p-5 rounded-md text-task">
-                                        <p>Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali
-                                            di kratnya.</p>
-                                        <div class="flex justify-between mt-4">
-                                            <button type="button" onclick="prevTask()"
-                                                class="hidden text-blue-500">Prev</button>
-                                            <button type="button" onclick="nextTask()"
-                                                class="hidden text-blue-500">Next</button>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-3 text-xs text-center text-gray-200 sub-label">
-                                        Upload 1 supported file: image. Max 10 MB.
-                                    </p>
-                                    <input-preview name="kerapian_botol_bir" class="flex flex-col justify-between grow">
-                                    </input-preview>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                <sub-form task-text="Kebersihan body tong sampah depan dan kondisi tertutup.
+" name="kebersihan-tong-sampah"></sub-form>
+                <sub-form
+                    task-text="Kebersihan taman depan dan tanaman rapi teratur, tanpa ada 1 pot pun yang kosong, tanpa ada tanaman yang gepeng tergencet siapapun."
+                    name="kebersihan-taman-depan"></sub-form>
+                <sub-form task-text="Kebersihan tempat taruh helm (tembok hitam I'm Lost)
+" name="kebersihan-tempat-helm"></sub-form>
+                <sub-form
+                    task-text="Kebersihan track reel pintu geser perbatasan sebelum masuk ke bar dan kebersihan SUBWOOFER"
+                    name="kebersihan-track-reel"></sub-form>
+                <sub-form
+                    task-text="Kondisi tanaman di sekat bangku area outdoor, tanaman di rak tembok sharing table, tanaman di 2 sharing table, meja yang menghadap lukisan, dan setiap meja lainnya, serta kelurusan lukisan di dinding."
+                    name="kondisi-tanaman-outdoor"></sub-form>
+                <sub-form
+                    task-text="Kebersihan GANG menuju mushola, tidak boleh ada barang berserakan. kebersihan washtafel sebelah mushola, dan taman di depan bar 100. Pintu menuju mushola selalu tertutup."
+                    name="kebersihan-gang-musholla"></sub-form>
+                <sub-form task-text="Kebersihan WC, tanaman di wc dan kerapian wc." name="kebersihan-wc"></sub-form>
+                <sub-form task-text="Jebakan tikus setelah pintu bar 100." name="jebakan-tikus"></sub-form>
+                <sub-form task-text="Kebersihan dining room." name="kebersihan-dining-room"></sub-form>
+                <sub-form task-text="Kebersihan ruang vip sofa hijau. Karpet dan sofa. Meja kecil. Meja buku buku."
+                    name="kebersihan-ruang-vip"></sub-form>
+                <sub-form
+                    task-text="Kebersihan indoor room, karpet dan sofa, bantalan sofa diatur lurus rapi. Piano dan rak sebelah piano, tanaman di sekatan bangku indoor, tanaman di depan jendela sekat baliknya vip sofa hijau. Kelurusan lukisan semua. Kisi kisi hijau dibalik dining room bebas debu. Tanaman monstera dll. Kepala kap lampu harus lurus semua, kalau tidak lurus cari tukang untuk luruskan. Sudut sudut pojok sofa, dekat piano dan tanaman, dekat rak buku."
+                    name="kebersihan-indoor-room"></sub-form>
+                <sub-form
+                    task-text="Kebersihan bar, pajangan kasir rapi, showcase rapi. Pintu gang selalu tertutup. Laci di bawah wastafel dan ice bin kering dan bersih. Kolong bawah mesin kopi bersih dan rapi, bawah kasir, celah antara kulkas, celah freezer."
+                    name="kebersihan-bar"></sub-form>
+                <sub-form
+                    task-text="Tidak boleh ada tumpukan paket menggunung, harus didistribusikan dan diantar ke yang bersangkutan."
+                    name="kerapian-tumpukan-paket"></sub-form>
+                <sub-form task-text="Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali di kratnya."
+                    name="kerapian-botol-bir"></sub-form>
             </form>
         </section>
     </main>
-    <!-- <script>
-        var splide = new Splide('.splide');
-        splide.mount();
-    </script> -->
 
+    <!-- <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+        const swiper = new Swiper(".swiper", {
+            direction: 'vertical',
+            enabled: true,
+            speed: 600,
+        })
+    </script> -->
     <script src="./script/main.js"></script>
 </body>
 

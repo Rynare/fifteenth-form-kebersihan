@@ -26,12 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("input[type=date]").value = new Date()
     .toISOString()
     .split("T")[0];
-
-  window.prevTask = () => {
-    document.querySelector(".splide__arrow.splide__arrow--prev").click();
-  };
-
-  window.nextTask = () => {
-    document.querySelector(".splide__arrow.splide__arrow--next").click();
-  };
 });

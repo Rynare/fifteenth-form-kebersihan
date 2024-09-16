@@ -1,37 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
-    --header-height: 44px;
-    --root-margin-x: 1rem;
+    --brown: #cea02b;
+    --black: black;
+    --danger: #a91d3a;
     --bg-color-main: white;
-    --bg-color-secondary: rgb(202, 202, 202);
     --text-color-main: black;
-    /* --nav-bg-color:;
-    --nav-text-color:; */
+    --font-size-small: 10px;
+    --font-size-normal: 12px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --header-height: 44px;
-        --root-margin-x: 1rem;
-        --bg-color-main: #181818;
-        --bg-color-secondary: #1f1f1f;
+        --bg-color-main: black;
         --text-color-main: white;
     }
 }
 
 html,
-body {
+body,
+#root {
     background-color: var(--bg-color-main);
     color: var(--text-color-main);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body>header {
-    background-color: var(--bg-color-main);
-}
-
-body>header>nav {
-    height: var(--header-height);
-    min-height: var(--header-height);
-    max-height: var(--header-height);
+    background-color: var(--brown);
+    font-size: var(--font-size-small);
+    font-weight: 700;
 }
 
 .fifteenth-logo {
@@ -40,141 +42,10 @@ body>header>nav {
 }
 
 .fifteenth-logo>span {
-    font-size: x-small;
     position: relative;
     top: -1px;
-}
-
-#root {
-    margin-left: var(--root-margin-x);
-    margin-right: var(--root-margin-x);
-}
-
-.form-wrapper {
-    /* background-color: grey; */
-    position: sticky;
-    top: var(--header-height);
-    min-height: calc(100vh - var(--header-height));
-    height: calc(100vh - var(--header-height));
-}
-
-.form-nav>div {
-    background-color: var(--text-color-main);
-}
-
-swiper-container {
-    width: 100%;
-    height: 100%;
-    flex-grow: 1;
-}
-
-swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    /* background: #fff; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: fit-content;
-}
-
-ul.splide__pagination,
-.splide__arrow.splide__arrow--prev,
-.splide__arrow.splide__arrow--next {
-    display: none;
-}
-
-.splide__slide {
-    display: flex;
-}
-
-.splide__list,
-.splide__slide,
-.splide__track {
-    height: 100% !important;
-}
-
-.sub-form {
-    margin: auto;
-    width: 640px;
-    height: fit-content;
-    height: 100%;
-    max-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-right: 10px;
-    background-color: #8e7061;
-    padding: 12px 10px;
-    border-radius: 10px;
-}
-
-.text-task {
-    background-color: var(--bg-color-main);
-    color: var(--text-color-main);
-    filter: opacity(0.5);
-}
-
-
-.image-preview-container {
-    /* flex-grow: 1; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 140px;
-}
-
-/* .preview-wrapper img:first-child {
-    margin-bottom: auto;
-} */
-
-.preview-wrapper img {
-    height: auto;
-    width: auto;
-    object-position: center;
-    object-fit: contain;
-    max-height: 35vh;
-    max-width: 70vw;
-    /* border: 2px solid var(--text-color-main); */
-    margin: auto;
-}
-
-/* @media screen and (min-width: 768px) {
-    .preview-wrapper img:first-child {
-        margin-right: auto;
-        margin-bottom: unset;
-    }
-} */
-
-.image-preview-container .preview-wrapper {
-    margin-top: 20px;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    background: var(--bg-color-main);
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.image-preview-container p {
-    mix-blend-mode: difference;
-}
-
-.input-wrapper {
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.take-pict {
-    /* background-color: var(--text-color-main); */
-    background-color: #8e7061;
-    color: var(--bg-color-main);
-    border: 3px solid var(--bg-color-secondary);
-}
-
-.image-preview-container .preview-wrapper::-webkit-scrollbar {
-    display: none;
+    scale: .6;
+    translate: -2px -7px;
 }
 
 ::-webkit-scrollbar {
@@ -187,6 +58,7 @@ ul.splide__pagination,
     background-color: var(--bg-color-main);
     border: 1px solid #cacaca;
     margin: 5px 10px;
+    margin-block: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -196,12 +68,85 @@ ul.splide__pagination,
     background-color: var(--text-color-main);
 }
 
-.splide__slide {
-    margin-bottom: 8px;
+#root {
+    max-height: calc(100vh - 47px);
+    overflow-y: auto;
 }
 
-.splide__list,
-.splide__slide,
-.splide__track {
-    height: fit-content !important;
+.hero-img {
+    height: 236px;
+    background-image: url(./banner-home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position-y: -77px;
+}
+
+.hero-wrapper {
+    transition: height 500ms ease;
+}
+
+.hero-wrapper .hero-img+div {
+    font-family: Inter;
+    font-size: 26.13px;
+    font-weight: 800;
+}
+
+.section-header {
+    background-color: var(--bg-color-main);
+}
+
+.section-header>* {
+    color: var(--danger);
+    border: 2px solid currentColor;
+    font-weight: 700;
+    font-size: var(--font-size-small);
+}
+
+.sub-form .img-wrapper {
+    background-color: var(--brown);
+    border: 3px solid var(--bg-color-main);
+    color: var(--text-color-main);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.sub-form img,
+.sub-form .img-wrapper>label>button,
+.sub-form .img-wrapper img.is-filled+label>svg {
+    display: none;
+}
+
+.sub-form img.is-filled {
+    display: block;
+}
+
+.sub-form:hover .img-wrapper img.is-filled+label>button {
+    display: flex;
+    backdrop-filter: contrast(0.5);
+    background-color: var(--brown);
+}
+
+.sub-form {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.sub-form .task-text {
+    background-color: var(--text-color-main);
+    color: var(--bg-color-main);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.15px;
+}
+
+.sub-form .task-text .pre-padding {
+    width: 90px;
+    height: 1px;
+}
+
+.sub-form .task-footer {
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    background-color: var(--danger);
 }
