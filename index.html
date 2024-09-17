@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
     <script src="./script/sub-form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="max-w-sm max-h-screen min-h-screen mx-auto">
@@ -36,10 +37,10 @@
         <div class="relative hero-wrapper">
             <div class="hero-img rounded-t-2xl"></div>
             <div
-                class="absolute top-0 bottom-0 left-0 right-0 flex flex-col mt-auto text-white backdrop-brightness-75 rounded-t-2xl">
+                class="absolute top-0 bottom-0 left-0 right-0 flex flex-col mt-auto text-white backdrop-brightness-90 rounded-t-2xl">
                 <div class="flex flex-col items-center m-auto">
                     <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Group</a>
-                    <a href="#" class="font-bold fifteenth-caution"></a>
+                    <a href="#" class="font-bold fifteenth-caution text-[21px]"></a>
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@
     <main id="root" class="sticky min-h-full z-40 top-[47px] mt-[-30px] rounded-t-2xl">
         <section class="relative min-h-full pb-5 form-wrapper rounded-t-2xl">
             <div class="sticky top-0 z-10 flex justify-between px-3 py-5 section-header">
-                <p class="px-3 py-1 rounded-md email">fahimdavid04@gmail.com</p>
+                <!-- <p class="px-3 py-1 rounded-md email">fahimdavid04@gmail.com</p> -->
                 <!-- <div class="flex items-center gap-2 px-3 py-1 rounded-md view-option">
                     <svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -95,13 +96,38 @@
                 <sub-form task-text="Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali di kratnya."
                     name="kerapian-botol-bir"></sub-form>
                 <div class="flex justify-center form-footer">
-                    <button type="submit" class="px-6 py-1 rounded-md">
+                    <button type="submit" class="px-6 py-1 rounded-md ">
                         Kirim
                     </button>
                 </div>
             </form>
         </section>
     </main>
+    <script>
+        function swalConfirmSubmit() {
+            Swal.fire({
+                title: "Konfirmasi",
+                text: "Apakah anda ingin mengirim laporan ini?",
+                icon: "question",
+                showCancelButton: true,
+                showConfirmButton: true,
+                confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
+                cancelButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--danger"),
+                confirmButtonText: "Kirim",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Sukses",
+                        text: "Laporan berhasil dikirim.",
+                        icon: "success",
+                        confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
+                    });
+                }
+            });
+        }
+        document.querySelector("form .form-footer button").addEventListener("click", swalConfirmSubmit)
+    </script>
     <script src="./script/main.js"></script>
 </body>
 

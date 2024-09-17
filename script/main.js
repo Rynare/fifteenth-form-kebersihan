@@ -26,4 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("input[type=date]").value = new Date()
     .toISOString()
     .split("T")[0];
+
+  const form = document.querySelector("form");
+  form.addEventListener("img-filled", event => {
+    const validity = form.checkValidity()
+    if (validity) {
+      form.querySelector(".form-footer button").classList.remove("hidden")
+    } else {
+      form.querySelector(".form-footer button").classList.add("hidden")
+    }
+  })
 });

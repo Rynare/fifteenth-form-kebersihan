@@ -112,7 +112,7 @@ body>header {
 }
 
 .sub-form img,
-.sub-form .img-wrapper>label>button,
+.sub-form .img-wrapper>label>span,
 .sub-form .img-wrapper img.is-filled+label>svg {
     display: none;
 }
@@ -125,7 +125,7 @@ body>header {
     backdrop-filter: contrast(0.5);
 }
 
-.sub-form:hover .img-wrapper img.is-filled+label>button {
+.sub-form:hover .img-wrapper img.is-filled+label>span {
     display: flex;
     background-color: var(--brown);
     font-size: var(--font-size-small);
