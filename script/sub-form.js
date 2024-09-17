@@ -56,7 +56,6 @@ class SubForm extends HTMLElement {
 
         inputFile.addEventListener("change", () => {
             const file = inputFile.files[0];
-            inputFile.value = ""
             inputB64.value = ""
             img.src = ""
             img.classList.remove("is-filled")

@@ -212,3 +212,8 @@ body>header {
         opacity: 1;
     }
 }
+
+.form-footer button {
+    background-color: var(--brown);
+    color: white;
+}
