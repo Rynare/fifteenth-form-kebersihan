@@ -12,12 +12,12 @@
     --font-size-large: 18px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --bg-color-main: black;
         --text-color-main: white;
     }
-}
+} */
 
 html,
 body,
@@ -121,10 +121,14 @@ body>header {
     display: block;
 }
 
+.sub-form:hover .img-wrapper img.is-filled+label {
+    backdrop-filter: contrast(0.5);
+}
+
 .sub-form:hover .img-wrapper img.is-filled+label>button {
     display: flex;
-    backdrop-filter: contrast(0.5);
     background-color: var(--brown);
+    font-size: var(--font-size-small);
 }
 
 .sub-form {
@@ -149,4 +153,61 @@ body>header {
     font-size: var(--font-size-small);
     font-weight: 600;
     background-color: var(--danger);
+}
+
+.hero-wrapper>div:nth-child(2)>div>a:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    min-width: 1px;
+    margin-bottom: 20px;
+}
+
+.hero-wrapper>div:nth-child(2)>div>a:nth-child(2)::before {
+    content: "Cafe by Mark Design";
+    display: inline-block;
+    animation: typing 10s steps(40) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0%;
+}
+
+@keyframes typing {
+
+    10%,
+    35% {
+        content: "Cafe by Mark Design";
+        width: 100%;
+    }
+
+    45% {
+        width: 0%;
+    }
+
+    55%,
+    90% {
+        content: "Checklist Task Harian";
+        width: 100%;
+    }
+
+    100% {
+        content: "Checklist Task Harian";
+        width: 0%;
+    }
+}
+
+.hero-wrapper>div:nth-child(2)>div>a:nth-child(2)::after {
+    content: "";
+    opacity: 0;
+    display: inline-block;
+    width: 2px;
+    height: 70%;
+    background-color: white;
+    margin-left: 2px;
+    animation: caret-animation infinite 850ms ease;
+}
+
+@keyframes caret-animation {
+    to {
+        opacity: 1;
+    }
 }
