@@ -38,7 +38,7 @@ const theTemplate = `
                             required type="file" capture="environment" accept="image/*">
                     </div>
                     <div class="w-full mt-[22px] pb-7 ms-[-30px] me-[10px]">
-                        <p class="px-3 mt-1 mb-2 text-white">Berikan angka penilaian untuk point berikut
+                        <p class="px-3 text-white text-[10px]">Berikan angka penilaian untuk point berikut
                             ini.
                         </p>
                         <range-slider name="score___input-name__" class="w-full">
