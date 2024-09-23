@@ -8,13 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
     <script src="./script/sub-form.js"></script>
+    <script src="./script/range-slider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="max-w-sm max-h-screen min-h-screen mx-auto">
     <header class="sticky top-0 z-10 w-full">
-        <nav class="flex items-stretch justify-between px-5 py-2">
-            <span class="flex items-center gap-1 px-2 py-2 text-center text-white bg-black rounded-lg">
+        <nav class="flex items-center justify-between px-5 py-2">
+            <img src="./logo-h.png" alt="" style="height: 18px; width: auto;">
+            <span class="flex items-center gap-1 px-2 py-2 text-center text-black bg-white rounded-lg ms-auto">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                     class="mb-[1.5px]">
                     <path
@@ -23,24 +25,14 @@
                 </svg>
                 <span class="current-date"></span>
             </span>
-            <div class="flex items-center px-3 text-black bg-white rounded-lg gap-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-pin-map-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z" />
-                    <path fill-rule="evenodd"
-                        d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
-                </svg>
-                <p class="font-extrabold">Cafe <span class="cafe-location">Lombok</span></p>
-            </div>
         </nav>
         <div class="relative hero-wrapper">
             <div class="hero-img rounded-t-2xl"></div>
             <div
-                class="absolute top-0 bottom-0 left-0 right-0 flex flex-col mt-auto text-white backdrop-brightness-90 rounded-t-2xl">
+                class="absolute top-0 bottom-0 left-0 right-0 flex flex-col mt-auto text-white backdrop-brightness-50 rounded-t-2xl">
                 <div class="flex flex-col items-center m-auto">
-                    <a href="#" class="font-bold fifteenth-logo">Fifteen<span>th</span>&nbsp;Group</a>
-                    <a href="#" class="font-bold fifteenth-caution text-[21px]"></a>
+                    <a href="#" class="font-bold fifteenth-logo">Fifteen<span>TH</span>Group</a>
+                    <a href="#" class="font-bold fifteenth-caution text-[15px]"></a>
                 </div>
             </div>
         </div>
@@ -48,7 +40,17 @@
 
     <main id="root" class="sticky min-h-full z-40 top-[47px] mt-[-30px] rounded-t-2xl">
         <section class="relative min-h-full pb-5 form-wrapper rounded-t-2xl">
-            <div class="sticky top-0 z-10 flex justify-between px-3 py-5 section-header">
+            <div class="sticky top-0 z-20 flex justify-between px-3 py-3 section-header">
+                <div class="flex items-center px-3 py-1 bg-white rounded-lg gap-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z" />
+                        <path fill-rule="evenodd"
+                            d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                    </svg>
+                    <p class="font-extrabold">Cafe <span class="cafe-location">Lombok</span></p>
+                </div>
                 <!-- <p class="px-3 py-1 rounded-md email">fahimdavid04@gmail.com</p> -->
                 <!-- <div class="flex items-center gap-2 px-3 py-1 rounded-md view-option">
                     <svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"
@@ -64,7 +66,8 @@
                 <input type="date" name="tanggal_laporan" id="date-submit" class="py-2 pe-5 ps-2 focus:outline-none"
                     hidden />
                 <sub-form task-text="Kebersihan body tong sampah depan dan kondisi tertutup.
-" name="kebersihan-tong-sampah"></sub-form>
+" name="kebersihan-tong-sampah" class="rounded-md">
+                </sub-form>
                 <sub-form
                     task-text="Kebersihan taman depan dan tanaman rapi teratur, tanpa ada 1 pot pun yang kosong, tanpa ada tanaman yang gepeng tergencet siapapun."
                     name="kebersihan-taman-depan"></sub-form>

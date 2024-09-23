@@ -3,7 +3,7 @@
 :root {
     --brown: #cea02b;
     --black: black;
-    --danger: #a91d3a;
+    --danger: #dc3545;
     --bg-color-main: white;
     --text-color-main: black;
     --font-size-small: 10px;
@@ -31,7 +31,7 @@ body,
 }
 
 body>header {
-    background-color: var(--brown);
+    background-color: black;
     font-size: var(--font-size-small);
     font-weight: 700;
 }
@@ -45,7 +45,7 @@ body>header {
     position: relative;
     top: -1px;
     scale: .6;
-    translate: -2px -7px;
+    translate: -7px -7px;
 }
 
 ::-webkit-scrollbar {
@@ -79,7 +79,7 @@ body>header {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
-    background-position-y: -77px;
+    background-position-y: -149px;
 }
 
 .hero-wrapper {
@@ -88,8 +88,9 @@ body>header {
 
 .hero-wrapper .hero-img+div {
     font-family: Inter;
-    font-size: 26.13px;
+    font-size: 20px;
     font-weight: 800;
+    line-height: 25px;
 }
 
 .section-header {
@@ -127,13 +128,13 @@ body>header {
 
 .sub-form:hover .img-wrapper img.is-filled+label>span {
     display: flex;
-    background-color: var(--brown);
+    background-color: var(--black);
     font-size: var(--font-size-small);
 }
 
 .sub-form {
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 15px;
+    padding-bottom: 30px;
 }
 
 .sub-form .task-text {
@@ -160,7 +161,7 @@ body>header {
     justify-content: center;
     align-items: center;
     min-width: 1px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .hero-wrapper>div:nth-child(2)>div>a:nth-child(2)::before {
@@ -186,12 +187,12 @@ body>header {
 
     55%,
     90% {
-        content: "Checklist Task Harian";
+        content: "Checklist Kebersihan Cafe";
         width: 100%;
     }
 
     100% {
-        content: "Checklist Task Harian";
+        content: "Checklist Kebersihan Cafe";
         width: 0%;
     }
 }
@@ -214,6 +215,153 @@ body>header {
 }
 
 .form-footer button {
-    background-color: var(--brown);
+    background-color: var(--black);
     color: white;
+}
+
+#debt-amount-slider {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    user-select: none;
+}
+
+#debt-amount-slider::before {
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: calc(100% * 0.8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+}
+
+#debt-amount-slider input,
+#debt-amount-slider label {
+    box-sizing: border-box;
+    flex: 1;
+    user-select: none;
+    cursor: pointer;
+}
+
+#debt-amount-slider label {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    user-select: none;
+    padding-bottom: 3rem;
+}
+
+#debt-amount-slider label:nth-of-type(1)::before {
+    content: "1";
+}
+
+#debt-amount-slider label:nth-of-type(2)::before {
+    content: "2";
+}
+
+#debt-amount-slider label:nth-of-type(3)::before {
+    content: "3";
+}
+
+#debt-amount-slider label:nth-of-type(4)::before {
+    content: "4";
+}
+
+#debt-amount-slider label:nth-of-type(5)::before {
+    content: "5";
+}
+
+#debt-amount-slider label::before {
+    position: absolute;
+    left: 50%;
+    padding-top: 10px;
+    transform: translate(-50%, 45px);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+}
+
+#debt-amount-slider label::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+#debt-amount-slider label:hover::after {
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+#debt-amount-slider input {
+    display: none;
+}
+
+#debt-amount-slider input:checked+label::before {
+    font-weight: 800;
+    opacity: 1;
+}
+
+#debt-amount-slider input:checked+label::after {
+    border-width: 4px;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+#debt-amount-pos {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--danger);
+    border-radius: 50%;
+    transition: all 0.15s ease-in-out;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    opacity: 0;
+    z-index: 2;
+}
+
+#debt-amount-slider input:checked~#debt-amount-pos {
+    opacity: 1;
+}
+
+/* Set position of the debt amount slider based on the number of options */
+#debt-amount-slider input:nth-child(1):checked~#debt-amount-pos {
+    left: 10%;
+}
+
+#debt-amount-slider input:nth-child(3):checked~#debt-amount-pos {
+    left: 30%;
+}
+
+#debt-amount-slider input:nth-child(5):checked~#debt-amount-pos {
+    left: 50%;
+}
+
+#debt-amount-slider input:nth-child(7):checked~#debt-amount-pos {
+    left: 70%;
+}
+
+#debt-amount-slider input:nth-child(9):checked~#debt-amount-pos {
+    left: 90%;
 }
