@@ -13,6 +13,9 @@ const theTemplate = `
                     class="flex items-center justify-center gap-2 py-2 pb-2 text-white bg-black rounded-br-md mt-[-20px]">
                     <div
                         class="img-wrapper w-[120px] aspect-square relative shrink-0 left-[-30px] bottom-[-40px]">
+                        <input type="text" name="b64___input-name__" hidden required>
+                        <input type="file" name="file___input-name__" hidden id="id___input-name__"
+                            required type="file" capture="environment" accept="image/*">
                         <img src="" alt="" class="w-[120px] aspect-square">
                         <label for="id___input-name__"
                             class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-2xl">
@@ -33,9 +36,6 @@ const theTemplate = `
                                 <span>Ganti File</span>
                             </span>
                         </label>
-                        <input type="text" name="b64___input-name__" hidden required>
-                        <input type="file" name="file___input-name__" hidden id="id___input-name__"
-                            required type="file" capture="environment" accept="image/*">
                     </div>
                     <div class="w-full mt-[22px] pb-7 ms-[-30px] me-[10px]">
                         <p class="px-3 text-white text-[10px]">Berikan angka penilaian untuk point berikut
@@ -55,6 +55,7 @@ class SubForm extends HTMLElement {
         this.template = theTemplate
     }
     connectedCallback() {
+        this.setAttribute("id", this.getAttribute("name"))
         this.template = this.template.replaceAll("__input-name__", this.getAttribute("name"))
         this.template = this.template.replace("__task-text__", this.getAttribute("task-text"))
         this.render()

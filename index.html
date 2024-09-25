@@ -99,7 +99,7 @@
                 <sub-form task-text="Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali di kratnya."
                     name="kerapian-botol-bir"></sub-form>
                 <div class="flex justify-center form-footer">
-                    <button type="submit" class="hidden px-6 py-1 rounded-md">
+                    <button type="submit" class="px-6 py-1 rounded-md">
                         Kirim
                     </button>
                 </div>
@@ -107,29 +107,51 @@
         </section>
     </main>
     <script>
-        function swalConfirmSubmit() {
-            Swal.fire({
-                title: "Konfirmasi",
-                text: "Apakah anda ingin mengirim laporan ini?",
-                icon: "question",
-                showCancelButton: true,
-                showConfirmButton: true,
-                confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
-                cancelButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--danger"),
-                confirmButtonText: "Kirim",
-                cancelButtonText: "Batal"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Sukses",
-                        text: "Laporan berhasil dikirim.",
-                        icon: "success",
-                        confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
-                    });
-                }
-            });
-        }
-        document.querySelector("form .form-footer button").addEventListener("click", swalConfirmSubmit)
+        document.querySelector("form .form-footer button").addEventListener("click", evt => {
+            const form = document.querySelector("form")
+            const validity = form.checkValidity()
+            if (validity) {
+                form.querySelector(".form-footer button").classList.remove("disabled")
+                Swal.fire({
+                    title: "Konfirmasi",
+                    text: "Apakah anda ingin mengirim laporan ini?",
+                    icon: "question",
+                    showCancelButton: true,
+                    showConfirmButton: true,
+                    confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
+                    cancelButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--danger"),
+                    confirmButtonText: "Kirim",
+                    cancelButtonText: "Batal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Sukses",
+                            text: "Laporan berhasil dikirim.",
+                            icon: "success",
+                            confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
+                        });
+                    }
+                });
+            } else {
+                evt.preventDefault()
+                let name = form.querySelector("input:invalid").getAttribute("name").replace("file_", "").replace("b64_", "").replace("score_", "")
+                Swal.fire({
+                    icon: "warning",
+                    title: "Gagal",
+                    text: "Lengkapi semua form terlebih dahulu.",
+                    confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown")
+                }).then(res => {
+                    setTimeout(() => {
+                        document.getElementById(`${name}`).scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center',
+                            inline: 'nearest'
+                        })
+                    }, 300);
+                })
+                form.querySelector(".form-footer button").classList.add("disabled")
+            }
+        })
     </script>
     <script src="./script/main.js"></script>
 </body>

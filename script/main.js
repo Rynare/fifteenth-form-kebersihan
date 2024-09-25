@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("img-filled", event => {
     const validity = form.checkValidity()
     if (validity) {
-      form.querySelector(".form-footer button").classList.remove("hidden")
+      form.querySelector(".form-footer button").classList.remove("disabled")
     } else {
-      form.querySelector(".form-footer button").classList.add("hidden")
+      form.querySelector(".form-footer button").classList.add("disabled")
     }
   })
+  s
 });
