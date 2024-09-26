@@ -13,6 +13,7 @@
 </head>
 
 <body class="max-w-sm max-h-screen min-h-screen mx-auto">
+
     <header class="sticky top-0 z-10 w-full">
         <nav class="flex items-center justify-between px-5 py-2">
             <img src="./logo-h.png" alt="" style="height: 18px; width: auto;">
@@ -51,18 +52,8 @@
                     </svg>
                     <p class="font-extrabold">Cafe <span class="cafe-location">Lombok</span></p>
                 </div>
-                <!-- <p class="px-3 py-1 rounded-md email">fahimdavid04@gmail.com</p> -->
-                <!-- <div class="flex items-center gap-2 px-3 py-1 rounded-md view-option">
-                    <svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.645142 1.15384C0.645142 0.970229 0.738603 0.794138 0.904966 0.664305C1.07133 0.534472 1.29697 0.461533 1.53224 0.461533L5.96772 0.461533C6.20299 0.461533 6.42863 0.534472 6.59499 0.664305C6.76136 0.794138 6.85482 0.970229 6.85482 1.15384V10.8461C6.85482 11.0298 6.76136 11.2059 6.59499 11.3357C6.42863 11.4655 6.20299 11.5385 5.96772 11.5385H1.53224C1.29697 11.5385 1.07133 11.4655 0.904966 11.3357C0.738603 11.2059 0.645142 11.0298 0.645142 10.8461V1.15384ZM8.62901 1.15384C8.62901 0.970229 8.72247 0.794138 8.88884 0.664305C9.0552 0.534472 9.28084 0.461533 9.51611 0.461533L13.9516 0.461533C14.1869 0.461533 14.4125 0.534472 14.5789 0.664305C14.7452 0.794138 14.8387 0.970229 14.8387 1.15384V4.61538C14.8387 4.79899 14.7452 4.97508 14.5789 5.10491C14.4125 5.23475 14.1869 5.30769 13.9516 5.30769H9.51611C9.28084 5.30769 9.0552 5.23475 8.88884 5.10491C8.72247 4.97508 8.62901 4.79899 8.62901 4.61538V1.15384ZM8.62901 7.38461C8.62901 7.201 8.72247 7.02491 8.88884 6.89507C9.0552 6.76524 9.28084 6.6923 9.51611 6.6923H13.9516C14.1869 6.6923 14.4125 6.76524 14.5789 6.89507C14.7452 7.02491 14.8387 7.201 14.8387 7.38461V10.8461C14.8387 11.0298 14.7452 11.2059 14.5789 11.3357C14.4125 11.4655 14.1869 11.5385 13.9516 11.5385H9.51611C9.28084 11.5385 9.0552 11.4655 8.88884 11.3357C8.72247 11.2059 8.62901 11.0298 8.62901 10.8461V7.38461Z"
-                            fill="currentColor" />
-                    </svg>
-                    Tampilan
-                </div> -->
             </div>
-            <form action="" enctype=" multipart/form-data" class="flex flex-col h-full mx-3 mt-4 gap-y-4">
+            <form action="" enctype="multipart/form-data" class="flex flex-col h-full mx-3 mt-4 gap-y-4">
                 <input type="date" name="tanggal_laporan" id="date-submit" class="py-2 pe-5 ps-2 focus:outline-none"
                     hidden />
                 <sub-form task-text="Kebersihan body tong sampah depan dan kondisi tertutup.
@@ -98,14 +89,51 @@
                     name="kerapian-tumpukan-paket"></sub-form>
                 <sub-form task-text="Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali di kratnya."
                     name="kerapian-botol-bir"></sub-form>
-                <div class="flex justify-center form-footer">
-                    <button type="submit" class="px-6 py-1 rounded-md">
-                        Kirim
-                    </button>
-                </div>
+                <button type="submit" class="mx-20 py-2 text-white rounded-lg bg-black">Kirim</button>
             </form>
         </section>
     </main>
+
+    <div id="myModal"
+        class="fixed flex inset-0 z-50  items-center justify-center w-full h-full overflow-y-auto bg-black bg-opacity-50">
+        <div class="relative w-[300px] p-5 mx-auto my-auto bg-white rounded-md">
+            <h2 class="mb-5 text-2xl font-bold">Masukkan Detail Anda</h2>
+            <form id="detailForm">
+                <div class="mb-4">
+                    <label for="name" class="block mb-1">Nama</label>
+                    <input type="text" id="name" required class="w-full border-2 border-gray-300 p-2 rounded-md" />
+                </div>
+                <div class="mb-4">
+                    <label for="location" class="block mb-1">Lokasi</label>
+                    <select id="location" required class="w-full border-2 border-gray-300 p-2 rounded-md">
+                        <option value="">Pilih Lokasi</option>
+                        <option value="Lombok">Lombok</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Jakarta">Jakarta</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-2 text-white bg-black rounded-md">Kirim</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('myModal');
+            const detailForm = document.getElementById('detailForm');
+            const cafeLocation = document.querySelector('.cafe-location');
+
+            modal.classList.remove('hidden');
+
+            detailForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const location = document.getElementById('location').value;
+                cafeLocation.textContent = location;
+                modal.classList.add('hidden');
+            });
+        });
+    </script>
     <script>
         document.querySelector("form .form-footer button").addEventListener("click", evt => {
             const form = document.querySelector("form")
@@ -118,8 +146,10 @@
                     icon: "question",
                     showCancelButton: true,
                     showConfirmButton: true,
-                    confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
-                    cancelButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--danger"),
+                    confirmButtonColor: getComputedStyle(document.querySelector(":root"))
+                        .getPropertyValue("--brown"),
+                    cancelButtonColor: getComputedStyle(document.querySelector(":root"))
+                        .getPropertyValue("--danger"),
                     confirmButtonText: "Kirim",
                     cancelButtonText: "Batal"
                 }).then((result) => {
@@ -128,18 +158,21 @@
                             title: "Sukses",
                             text: "Laporan berhasil dikirim.",
                             icon: "success",
-                            confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown"),
+                            confirmButtonColor: getComputedStyle(document.querySelector(
+                                ":root")).getPropertyValue("--brown"),
                         });
                     }
                 });
             } else {
                 evt.preventDefault()
-                let name = form.querySelector("input:invalid").getAttribute("name").replace("file_", "").replace("b64_", "").replace("score_", "")
+                let name = form.querySelector("input:invalid").getAttribute("name").replace("file_", "")
+                    .replace("b64_", "").replace("score_", "")
                 Swal.fire({
                     icon: "warning",
                     title: "Gagal",
                     text: "Lengkapi semua form terlebih dahulu.",
-                    confirmButtonColor: getComputedStyle(document.querySelector(":root")).getPropertyValue("--brown")
+                    confirmButtonColor: getComputedStyle(document.querySelector(":root"))
+                        .getPropertyValue("--brown")
                 }).then(res => {
                     setTimeout(() => {
                         document.getElementById(`${name}`).scrollIntoView({
@@ -153,6 +186,8 @@
             }
         })
     </script>
+
+
     <script src="./script/main.js"></script>
 </body>
 
