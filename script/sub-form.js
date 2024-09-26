@@ -3,16 +3,12 @@ const theTemplate = `
         <div class="relative">
             <div class="rounded-md task-text flex flex-col justify-between min-h-[166px]">
                 <div class="flex gap-1">
-                    <p class="p-3 grow">__task-text__</p>
+                    <p class="px-5 pt-5 grow">__task-text__</p>
                 </div>
-                <p
-                    class="z-10 py-2 mx-3 mt-auto text-center border-2 border-white rounded-md task-footer">
-                    Ukuran Image maks 10Mb
-                </p>
                 <div
-                    class="flex items-center justify-center gap-2 py-2 pb-2 text-white bg-black rounded-br-md mt-[-20px]">
+                    class="flex items-center justify-center gap-2  text-white bg-black rounded-md ">
                     <div
-                        class="img-wrapper w-[120px] aspect-square relative shrink-0 left-[-30px] bottom-[-40px]">
+                        class="img-wrapper w-[120px] aspect-square relative shrink-0 left-[-30px] bottom-[-5px]">
                         <input type="text" name="b64___input-name__" hidden required>
                         <input type="file" name="file___input-name__" hidden id="id___input-name__"
                             required type="file" capture="environment" accept="image/*">
@@ -37,59 +33,73 @@ const theTemplate = `
                             </span>
                         </label>
                     </div>
-                    <div class="w-full mt-[22px] pb-7 ms-[-30px] me-[10px]">
+                    <div class="w-full mt-[12px] pb-2 ms-[-30px] me-[10px]">
                         <p class="px-3 text-white text-[10px]">Berikan angka penilaian untuk point berikut
                             ini.
                         </p>
                         <range-slider name="score___input-name__" class="w-full">
                         </range-slider>
+                                <p
+                    class="z-10 py-1 mt-9 text-center border-2 border-white rounded-md task-footer">
+                    Ukuran Image maks 2mb
+                </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-`
+`;
 class SubForm extends HTMLElement {
-    constructor() {
-        super()
-        this.template = theTemplate
-    }
-    connectedCallback() {
-        this.setAttribute("id", this.getAttribute("name"))
-        this.template = this.template.replaceAll("__input-name__", this.getAttribute("name"))
-        this.template = this.template.replace("__task-text__", this.getAttribute("task-text"))
-        this.render()
-    }
-    render() {
-        this.innerHTML = this.template
-        this.addEvent()
-    }
-    addEvent() {
-        const subForm = this
-        const img = this.querySelector(".img-wrapper img")
-        const inputFile = this.querySelector(`input[name=file_${this.getAttribute("name")}]`)
-        const inputB64 = this.querySelector(`input[name=b64_${this.getAttribute("name")}]`)
-        const event = new CustomEvent("img-filled")
+  constructor() {
+    super();
+    this.template = theTemplate;
+  }
+  connectedCallback() {
+    this.setAttribute("id", this.getAttribute("name"));
+    this.template = this.template.replaceAll(
+      "__input-name__",
+      this.getAttribute("name")
+    );
+    this.template = this.template.replace(
+      "__task-text__",
+      this.getAttribute("task-text")
+    );
+    this.render();
+  }
+  render() {
+    this.innerHTML = this.template;
+    this.addEvent();
+  }
+  addEvent() {
+    const subForm = this;
+    const img = this.querySelector(".img-wrapper img");
+    const inputFile = this.querySelector(
+      `input[name=file_${this.getAttribute("name")}]`
+    );
+    const inputB64 = this.querySelector(
+      `input[name=b64_${this.getAttribute("name")}]`
+    );
+    const event = new CustomEvent("img-filled");
 
-        inputFile.addEventListener("change", () => {
-            const file = inputFile.files[0];
-            inputB64.value = ""
-            img.src = ""
-            img.classList.remove("is-filled")
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    img.src = e.target.result;
-                    img.classList.add("is-filled")
-                    inputB64.value = e.target.result;
-                    document.querySelector("form").dispatchEvent(event)
-                };
-                reader.readAsDataURL(file);
-            } else {
-                document.querySelector("form").dispatchEvent(event)
-            }
-        })
-    }
+    inputFile.addEventListener("change", () => {
+      const file = inputFile.files[0];
+      inputB64.value = "";
+      img.src = "";
+      img.classList.remove("is-filled");
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          img.src = e.target.result;
+          img.classList.add("is-filled");
+          inputB64.value = e.target.result;
+          document.querySelector("form").dispatchEvent(event);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        document.querySelector("form").dispatchEvent(event);
+      }
+    });
+  }
 }
 
-customElements.define("sub-form", SubForm)
+customElements.define("sub-form", SubForm);
