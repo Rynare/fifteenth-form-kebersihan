@@ -12,7 +12,7 @@ const theTemplate = `
                     
                         <input type="text" name="b64___input-name__" hidden required>
                         <input type="file" name="file___input-name__" hidden id="id___input-name__"
-                            required type="file" capture="environment" accept="image/*" multiple>
+                            required type="file" accept="image/*" multiple>
                             <img src="" alt="" class="w-[120px] aspect-square">
                         <label for="id___input-name__"
                             class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-2xl">
