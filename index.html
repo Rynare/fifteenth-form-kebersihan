@@ -42,6 +42,14 @@
     <main id="root" class="sticky min-h-full z-40 top-[47px] mt-[-30px] rounded-t-2xl">
         <section class="relative min-h-full pb-5 form-wrapper rounded-t-2xl">
             <div class="sticky top-0 z-20 flex justify-between px-3 py-3 section-header">
+                <div class="flex items-center px-2 py-1 bg-white rounded-lg gap-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person" viewBox="0 0 16 16">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                    </svg>
+                    <p class="font-extrabold"></p><span class="name-staff">-</span></p>
+                </div>
                 <div class="flex items-center px-3 py-1 bg-white rounded-lg gap-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-pin-map-fill" viewBox="0 0 16 16">
@@ -50,10 +58,12 @@
                         <path fill-rule="evenodd"
                             d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
                     </svg>
-                    <p class="font-extrabold">Cafe <span class="cafe-location">Lombok</span></p>
+                    <p class="font-extrabold">Cafe <span class="cafe-location">-</span></p>
                 </div>
             </div>
             <form action="" enctype="multipart/form-data" class="flex flex-col h-full mx-3 mt-4 gap-y-4">
+                <input type="hidden" name="name" id="hiddenName" />
+                <input type="hidden" name="location" id="hiddenLocation" />
                 <input type="date" name="tanggal_laporan" id="date-submit" class="py-2 pe-5 ps-2 focus:outline-none"
                     hidden />
                 <sub-form task-text="Kebersihan body tong sampah depan dan kondisi tertutup.
@@ -89,57 +99,65 @@
                     name="kerapian-tumpukan-paket"></sub-form>
                 <sub-form task-text="Kerapian botol botol bir, yang kosong sudah terkelompokkan kembali di kratnya."
                     name="kerapian-botol-bir"></sub-form>
-                <button type="submit" class="mx-20 py-2 text-white rounded-lg bg-black">Kirim</button>
+                <button type="submit" class="mx-20 py-2 text-white rounded-lg bg-black submit-all">Kirim</button>
             </form>
         </section>
     </main>
 
     <div id="myModal"
-        class="fixed flex inset-0 z-50  items-center justify-center w-full h-full overflow-y-auto bg-black bg-opacity-50">
+        class="fixed flex inset-0 z-50 items-center justify-center w-full h-full overflow-y-auto bg-black bg-opacity-50">
         <div class="relative w-[300px] p-5 mx-auto my-auto bg-white rounded-md">
             <h2 class="mb-5 text-2xl font-bold">Masukkan Detail Anda</h2>
-            <form id="detailForm">
-                <div class="mb-4">
-                    <label for="name" class="block mb-1">Nama</label>
-                    <input type="text" id="name" required class="w-full border-2 border-gray-300 p-2 rounded-md" />
-                </div>
-                <div class="mb-4">
-                    <label for="location" class="block mb-1">Lokasi</label>
-                    <select id="location" required class="w-full border-2 border-gray-300 p-2 rounded-md">
-                        <option value="">Pilih Lokasi</option>
-                        <option value="Lombok">Lombok</option>
-                        <option value="Bali">Bali</option>
-                        <option value="Jakarta">Jakarta</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full py-2 text-white bg-black rounded-md">Kirim</button>
-            </form>
+            <div class="mb-4">
+                <label for="name" class="block mb-1">Nama</label>
+                <input type="text" id="name" required class="w-full border-2 border-gray-300 p-2 rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="location" class="block mb-1">Lokasi</label>
+                <select id="location" required class="w-full border-2 border-gray-300 p-2 rounded-md">
+                    <option value="">Pilih Lokasi</option>
+                    <option value="Lombok">Lombok</option>
+                    <option value="Bali">Bali</option>
+                    <option value="Jakarta">Jakarta</option>
+                </select>
+            </div>
+            <button id="modalSubmit" class="w-full py-2 text-white bg-black rounded-md">Kirim</button>
         </div>
     </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('myModal');
-            const detailForm = document.getElementById('detailForm');
+            const modalSubmit = document.getElementById('modalSubmit');
             const cafeLocation = document.querySelector('.cafe-location');
-
+            const nameStaff = document.querySelector('.name-staff');
             modal.classList.remove('hidden');
 
-            detailForm.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const name = document.getElementById('name').value;
-                const location = document.getElementById('location').value;
-                cafeLocation.textContent = location;
-                modal.classList.add('hidden');
-            });
+            if (modalSubmit) {
+                modalSubmit.addEventListener('click', () => {
+                    const name = document.getElementById('name').value;
+                    const location = document.getElementById('location').value;
+
+                    if (name && location) {
+                        cafeLocation.textContent = location;
+                        nameStaff.textContent = name;
+                        modal.classList.add('hidden');
+                        document.getElementById('hiddenName').value = name; // Perbaikan
+                        document.getElementById('hiddenLocation').value = location; // Perbaikan
+                    }
+                });
+            } else {
+                console.error('Modal submit button not found!');
+            }
         });
     </script>
     <script>
-        document.querySelector("form .form-footer button").addEventListener("click", evt => {
+        document.querySelector(".submit-all").addEventListener("click", evt => {
             const form = document.querySelector("form")
             const validity = form.checkValidity()
             if (validity) {
-                form.querySelector(".form-footer button").classList.remove("disabled")
+                form.querySelector(".submit-all").classList.remove("disabled")
                 Swal.fire({
                     title: "Konfirmasi",
                     text: "Apakah anda ingin mengirim laporan ini?",
@@ -182,7 +200,7 @@
                         })
                     }, 300);
                 })
-                form.querySelector(".form-footer button").classList.add("disabled")
+                form.querySelector(".submit-all").classList.add("disabled")
             }
         })
     </script>

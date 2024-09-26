@@ -2,25 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const tanggalSekarang = new Date();
 
   document.querySelector(".current-date").textContent =
-    `${["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"][
-    tanggalSekarang.getDay()
-    ]
+    `${
+      ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"][
+        tanggalSekarang.getDay()
+      ]
     }, ` +
     `${tanggalSekarang.getDate()} ` +
-    `${[
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "Mei",
-      "Jun",
-      "Jul",
-      "Agu",
-      "Sep",
-      "Okt",
-      "Nov",
-      "Des",
-    ][tanggalSekarang.getMonth()]
+    `${
+      [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "Mei",
+        "Jun",
+        "Jul",
+        "Agu",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des",
+      ][tanggalSekarang.getMonth()]
     } ` +
     `${tanggalSekarang.getFullYear()}`;
   document.querySelector("input[type=date]").value = new Date()
@@ -28,13 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .split("T")[0];
 
   const form = document.querySelector("form");
-  form.addEventListener("img-filled", event => {
-    const validity = form.checkValidity()
+  form.addEventListener("img-filled", (event) => {
+    const validity = form.checkValidity();
     if (validity) {
-      form.querySelector(".form-footer button").classList.remove("disabled")
+      form.querySelector(".submit-all").classList.remove("disabled");
     } else {
-      form.querySelector(".form-footer button").classList.add("disabled")
+      form.querySelector(".submit-all").classList.add("disabled");
     }
-  })
-  s
+  });
 });

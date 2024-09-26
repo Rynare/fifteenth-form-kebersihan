@@ -9,10 +9,11 @@ const theTemplate = `
                     class="flex items-center justify-center gap-2  text-white bg-black rounded-md ">
                     <div
                         class="img-wrapper w-[120px] aspect-square relative shrink-0 left-[-30px] bottom-[-5px]">
+                    
                         <input type="text" name="b64___input-name__" hidden required>
                         <input type="file" name="file___input-name__" hidden id="id___input-name__"
-                            required type="file" capture="environment" accept="image/*">
-                        <img src="" alt="" class="w-[120px] aspect-square">
+                            required type="file" capture="environment" accept="image/*" multiple>
+                            <img src="" alt="" class="w-[120px] aspect-square">
                         <label for="id___input-name__"
                             class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
@@ -43,6 +44,16 @@ const theTemplate = `
                     class="z-10 py-1 mt-9 text-center border-2 border-white rounded-md task-footer">
                     Ukuran Image maks 2mb
                 </p>
+                                <div class="flex">
+                                    <p
+                    class="z-10 text-black bg-white mt-2 justify-center w-[100px] text-center border-2 border-white rounded-md count-item-title">
+                Jumlah File 
+                </p>
+                    <p
+                    class="ms-2 z-10 mt-2 justify-center w-[100px] text-center border-2 border-white rounded-md count-item">
+            0
+                </p>
+                </div>
                     </div>
                 </div>
             </div>
@@ -79,15 +90,18 @@ class SubForm extends HTMLElement {
     const inputB64 = this.querySelector(
       `input[name=b64_${this.getAttribute("name")}]`
     );
+    const countItem = this.querySelector(".count-item");
     const event = new CustomEvent("img-filled");
 
     inputFile.addEventListener("change", () => {
-      const file = inputFile.files[0];
+      const files = inputFile.files;
       inputB64.value = "";
       img.src = "";
       img.classList.remove("is-filled");
-      if (file) {
+
+      if (files.length > 0) {
         const reader = new FileReader();
+        const file = files[0];
         reader.onload = function (e) {
           img.src = e.target.result;
           img.classList.add("is-filled");
@@ -95,9 +109,9 @@ class SubForm extends HTMLElement {
           document.querySelector("form").dispatchEvent(event);
         };
         reader.readAsDataURL(file);
-      } else {
-        document.querySelector("form").dispatchEvent(event);
       }
+      countItem.textContent = files.length;
+      document.querySelector("form").dispatchEvent(event);
     });
   }
 }
